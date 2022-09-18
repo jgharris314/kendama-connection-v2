@@ -6,7 +6,8 @@ import SpeedLadder from "./Pages/SpeedLadder";
 
 export default function Content() {
   return (
-    <div className="flex md:flex-col md:w-5/6 bg-green-50 h-screen overflow-hidden">
+    <div className="flex md:flex-col bg-green-50 h-screen overflow-hidden">
+      Words
       <Routes>
         <Route path="open" element={<Open />} />
         <Route path="ken" element={<Ken />} />

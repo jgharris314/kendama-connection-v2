@@ -1,18 +1,18 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function NavBar() {
+export default function GamesNav({ setDisplayNav }) {
   const seeYaLaterNavigator = useNavigate();
 
   const afterWhileClickadile = (path) => {
-    seeYaLaterNavigator(`${path}`);
+    seeYaLaterNavigator(`games/${path}`);
+    setDisplayNav(false);
   };
-
   const navItemStyles =
-    "h-16 w-20 md:w-auto bg-blue-200 flex items-center justify-center border-2 border-red-200 uppercase text-center";
+    "h-16 w-full bg-blue-200 flex items-center justify-center border-2 border-red-200 uppercase text-center cursor-pointer";
 
   return (
-    <div className="flex md:flex-col w-screen md:w-1/6 lg:w-1/8 max-w-sm bg-red-50 justify-between md:justify-start">
+    <div className="flex flex-col w-full bg-red-50 items-center">
       <div
         onClick={() => afterWhileClickadile("open")}
         className={navItemStyles}
@@ -27,25 +27,16 @@ export default function NavBar() {
       </div>
       <div
         onClick={() => afterWhileClickadile("freestyle")}
-        className={`hidden md:flex ${navItemStyles}`}
+        className={navItemStyles}
       >
         freestyle
       </div>
-      <div
-        onClick={() => afterWhileClickadile("freestyle")}
-        className={`md:hidden flex ${navItemStyles}`}
-      >
-        free
-        <br />
-        style
-      </div>
+
       <div
         onClick={() => afterWhileClickadile("speedladder")}
         className={navItemStyles}
       >
-        speed
-        <br />
-        ladder
+        speed ladder
       </div>
     </div>
   );

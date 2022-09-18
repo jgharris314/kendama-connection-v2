@@ -1,25 +1,35 @@
+import React from "react";
+import { useNavigate } from "react-router-dom";
+
 export default function NavBar() {
+  const seeYaLaterNavigator = useNavigate();
+
+  const afterWhileClickadile = (path) => {
+    seeYaLaterNavigator(`/${path}`);
+  };
+
   const navItemStyles =
-    "h-16 bg-blue-200 flex items-center justify-center border-y-2 border-red-200";
+    "h-16 w-24 md:w-auto bg-blue-200 flex items-center justify-center border-y-2 border-red-200 uppercase";
+
   return (
-    <div className="flex md:flex-col md:w-1/6 max-w-sm bg-red-50">
+    <div className="flex md:flex-col md:w-1/6 max-w-sm bg-red-50 justify-between md:justify-start">
       <div
-        onClick={() => (window.location.href = "/home")}
+        onClick={() => afterWhileClickadile("home")}
         className={navItemStyles}
       >
-        HOME
+        home
       </div>
       <div
-        onClick={() => (window.location.href = "/events")}
+        onClick={() => afterWhileClickadile("events")}
         className={navItemStyles}
       >
-        EVENTS
+        events
       </div>
       <div
-        onClick={() => (window.location.href = "/games")}
+        onClick={() => afterWhileClickadile("games")}
         className={navItemStyles}
       >
-        GAMES
+        games
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ import Games from "./Pages/Games";
 
 export default function Content() {
   return (
-    <div className="flex md:flex-col md:w-5/6 bg-green-50 overflow-hidden">
+    <div className="flex md:flex-col md:w-screen bg-green-50 overflow-hidden mt-16 md:mt-0 md:ml-16">
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/events" element={<Events />} />

@@ -20,7 +20,7 @@ export default function NavBar() {
     "h-16 md:w-36 bg-blue-200 flex items-center justify-center border-2 border-red-200 uppercase text-center cursor-pointer";
 
   return (
-    <div className="flex flex-col md:flex-row fixed bg-green-200 h-screen w-screen md:w-auto">
+    <div className="flex flex-col md:flex-row fixed bg-green-200 md:h-screen w-screen md:w-auto">
       <div
         className="h-16 w-full md:w-16 flex items-center py-4 pl-4 cursor-pointer"
         onClick={() => setDisplayNav(!displayNav)}
